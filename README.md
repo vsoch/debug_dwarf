@@ -38,16 +38,11 @@ Here we see the virtual table element location attributes:
 
 ```bash
 $ go run main.go vtable 
-VtableElementLocation [16 3]
-[16 3]
-VtableElementLocation [16 0]
-[16 0]
-VtableElementLocation [16 3]
-[16 3]
-VtableElementLocation [16 0]
-[16 0]
-VtableElementLocation [16 1]
-[16 1]
+getname         : VtableElementLocation : [16 3]
+warmblooded     : VtableElementLocation : [16 0]
+getname         : VtableElementLocation : [16 3]
+getname         : VtableElementLocation : [16 0]
+warmblooded     : VtableElementLocation : [16 1]
 ```
 
 [The attribute](https://cs.opensource.google/go/go/+/master:src/debug/dwarf/const.go;l=73;bpv=1;bpt=1) is 

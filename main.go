@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/vsoch/debug_dwarf/pkg/debug/elf"
 	"github.com/vsoch/debug_dwarf/pkg/debug/dwarf"
+	"github.com/vsoch/debug_dwarf/pkg/debug/elf"
 )
 
 // usage (vtable is an ELF binary with dwarf debug symbols)
@@ -35,20 +35,19 @@ func ParseDwarf(dwf *dwarf.Data) {
 		}
 
 		switch entry.Tag {
-		
+
 		// We found a function! Functions have this vtable attribute
 		case dwarf.TagSubprogram:
 
 			// DW_AT_vtable_elem_location = 0x4d // block, loclistptr
 			loc := entry.Val(dwarf.AttrVtableElemLoc)
+			name := entry.Val(dwarf.AttrName)
 			if loc != nil {
-				fmt.Println("VtableElementLocation", loc)
-				fmt.Println(loc)
+				fmt.Printf("%-15s : VtableElementLocation : %v\n", name, loc)
 			}
 		}
 	}
 }
-
 
 func main() {
 

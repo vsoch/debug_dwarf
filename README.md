@@ -1,6 +1,6 @@
 # Debug Dwarf
 
-Play aronud with debug dwarf!
+Play around with debug dwarf!
 
 This is a quick repository to reproduce some issues I'm having with reading 
 dwarf in Go. 
@@ -19,7 +19,7 @@ $ dwarfdump -a vtable > output.txt
 And then look in the output for the attribute (it's all over the place!).
 This is important to validate because DWARF varies quite a bit depending on your compiler!
 It's not good practice, but if you don't have c compilers available (and maybe you
-have a compatible architecutre) I included the binary in the repo (kids don't do this
+have a compatible architecture) I included the binary in the repo (kids don't do this
 at home! 😄️)
 
 ## Go minimal example
